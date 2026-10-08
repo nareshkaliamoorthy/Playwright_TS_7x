@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "username": "test@playlab.com",
+        "password": "Password123"
+    },
+    {
+        "id": 2,
+        "username": "test@playlab.com",
+        "password": "Password1234"
+    }
+]
