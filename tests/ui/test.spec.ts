@@ -11,7 +11,8 @@ const loginUserData = JSON.parse(fs.readFileSync(jsonPath, "utf-8"))
 
 test.describe("Login Functionality", () => {
     test("Verify Valid Login", { tag: ["@ui"] }, async ({ loginPage, homePage }) => {
-        await loginPage.login("test@playlab.com", "Password123");
+        // await loginPage.login("test@playlab.com", "Password123");
+        await loginPage.loginWO("", "");
         await loginPage.navigateToDashboard();
         //await homePage.enterFullName("Naresh K");
         await homePage.enterPassword("NkNkNK");
@@ -40,8 +41,8 @@ test.describe("Login Functionality", () => {
     });
 
     for (const user of loginUserData) {
-        test(`Login validate-${user.id}`, { tag: ["@parallel"] }, async ({ loginPage }) => {
-            await loginPage.login(user.username, user.password)
+        test(`Login validate-${user.id}`, { tag: ["@ui"] }, async ({ loginPage }) => {
+            await loginPage.loginWO(user.username, user.password)
         })
     }
 

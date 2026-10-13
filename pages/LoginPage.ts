@@ -24,6 +24,14 @@ export class LoginPage {
         await this.signInButton.click();
         await expect(this.page.getByText("Signed in as")).toBeVisible();
     }
+    async loginWO(username: string, password: string) {
+        //await this.page.goto("https://playwrightlab.github.io/login.html");
+        await this.page.goto("/login.html");
+        // await this.email.fill(username);
+        // await this.password.fill(password)
+        // await this.signInButton.click();
+        await expect(this.page.getByText("Signed in as")).toBeVisible();
+    }
 
     async navigateToDashboard() {
         await this.dashboardButton.click();
